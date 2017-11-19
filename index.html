@@ -5,10 +5,48 @@
 		<meta charset="UTF-8">
 		<title>Initiative Tracker</title>
 		<link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 
 	</head>
   <body>
+
+  	<header>
+  		<div class="container">
+  			<h1 class="titulo">Initiative Tracker</h1>
+  		</div>
+  	</header>
+
+    <main>
+      <section class="container">
+        <h2>Combatants</h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Name</th>
+              <th>Initiative</th>
+              <th>Total HP</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="combatants-table">
+
+            <tr id="row-1">
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="initiative"></td>
+              <td><input type="text" name="total-hp"></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <button type="button" name="button">New Combatant</button>
+        <button type="button" name="button">Rumble!</button>
+      </section>
+    </main>
 
   </body>
 </html>
