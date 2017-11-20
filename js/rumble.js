@@ -1,8 +1,8 @@
 let rumble_button = $("#rumble");
 
-rumble_button.on("click", function () {
+rumble_button.one("click", function () {
   sortTable();
-  // removeFields();
+  removeFields();
   this.innerHTML = "Next Turn";
   $("tbody")[0].children[0].classList.add("red");
   $("#rumble").addClass("alt");
@@ -23,5 +23,14 @@ rumble_button.on("click", function () {
 });
 
 function removeFields() {
-
+  cells = $("td");
+  cells.each(function () {
+    let cell_type = this.children[0].name;
+    if (cell_type == "name" || cell_type == "initiative") {
+      let value = this.children[0].value;
+      let field = this.children[0];
+      field.remove();
+      this.innerHTML = value;
+    }
+  });
 }
