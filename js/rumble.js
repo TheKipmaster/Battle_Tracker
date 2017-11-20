@@ -16,6 +16,9 @@ rumble_button.one("click", function () {
     current_initiative[0].classList.remove("red");
     if (current_initiative.next().length == 0) {
       $("tbody")[0].children[0].classList.add("red");
+      $("input[name='reaction']").each(function () {
+        this.checked = true;
+      });
     } else {
       current_initiative.next().addClass("red");
     }
