@@ -3,14 +3,18 @@ let rumble_button = $("#rumble");
 rumble_button.on("click", function () {
   sortTable();
   this.innerHTML = "Next Turn";
-  $("#row-1").addClass("red");
+  $("tbody")[0].children[0].classList.add("red");
   $("#rumble").addClass("alt");
 
-  // this.addEventListener("click", function () {
-  //   current_initiative = $(".red")[0];
-  //   current_initiative.removeClass("red");
-  //   current_initiative.next().addClass("red");
-  // });
+  this.addEventListener("click", function () {
+    current_initiative = $(".red");
+    current_initiative[0].classList.remove("red");
+    if (current_initiative.next().length == 0) {
+      $("tbody")[0].children[0].classList.add("red");
+    } else {
+      current_initiative.next().addClass("red");
+    }
+  });
 });
 
 function sortTable() {
