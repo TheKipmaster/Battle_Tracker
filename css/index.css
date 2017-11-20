@@ -129,6 +129,10 @@ button.alt {
   background-color: #db3b29;
 }
 
+button#new-row {
+	width: 100%;
+}
+
 .adicionar-paciente{
     margin-top: 30px;
 }
