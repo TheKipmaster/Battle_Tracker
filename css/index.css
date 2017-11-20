@@ -120,17 +120,21 @@ button:active{
 }
 
 button[disabled=disabled], button:disabled {
-    background-color: gray;
+  background-color: gray;
 	border-color: darkgray;
 
+}
+
+button.alt {
+  background-color: #db3b29;
 }
 
 .adicionar-paciente{
     margin-top: 30px;
 }
 
-.campo-invalido{
-	border: 1px solid red;
+.red {
+	border: 2px solid red;
 }
 
 .paciente-invalido {
