@@ -15,6 +15,8 @@ rumble_button.one("click", function () {
     check_uncheck(this);
   });
 
+  $("#new-row").remove();
+
   this.addEventListener("click", function () {
     current_initiative = $(".red");
     current_initiative[0].classList.remove("red");
