@@ -3,7 +3,7 @@ let new_row_button = document.querySelector("#new-row");
 new_row_button.addEventListener("click", function () {
 
   let table = document.querySelector("tbody");
-  let row = document.getElementById("1");
+  let row = $("tbody")[0].children[0];
   let new_row = row.cloneNode(true);
 
   new_row.id = (table.children.length+1);
