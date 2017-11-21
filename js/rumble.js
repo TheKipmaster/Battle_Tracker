@@ -11,13 +11,17 @@ rumble_button.one("click", function () {
     calculate(this);
   });
 
+  $(".checkbox").on("click", function () {
+    check_uncheck(this);
+  });
+
   this.addEventListener("click", function () {
     current_initiative = $(".red");
     current_initiative[0].classList.remove("red");
     if (current_initiative.next().length == 0) {
       $("tbody")[0].children[0].classList.add("red");
-      $("input[name='reaction']").each(function () {
-        this.checked = true;
+      $(".reaction").each(function () {
+        check(this);
       });
     } else {
       current_initiative.next().addClass("red");
@@ -36,4 +40,25 @@ function removeFields() {
       this.innerHTML = value;
     }
   });
+}
+
+function check_uncheck(checkbox) {
+  classes = checkbox.classList;
+  if (classes.contains("checked")) {
+    uncheck(checkbox);
+  } else {
+    check(checkbox);
+  }
+}
+
+function uncheck(checkbox) {
+  classes = checkbox.classList;
+  classes.remove("checked");
+  checkbox.children[0].innerHTML = "NO"
+}
+
+function check(checkbox) {
+  classes = checkbox.classList;
+  classes.add("checked");
+  checkbox.children[0].innerHTML = "YES"
 }

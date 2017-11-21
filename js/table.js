@@ -8,11 +8,7 @@ new_row_button.addEventListener("click", function () {
 
   new_row.id = (table.children.length+1);
   $.each(new_row.children, function(i, td) {
-    if (td.children[0].name == "concentration") {
-      td.children[0].checked = false;
-    } else if (td.children[0].name == "reaction") {
-      td.children[0].checked = true;      
-    } else {
+    if (td.children.length != 0) {
       td.children[0].value = "";
     }
   });
